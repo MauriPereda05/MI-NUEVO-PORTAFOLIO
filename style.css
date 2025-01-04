@@ -1,0 +1,380 @@
+/* Estilos generales */
+
+body {
+    font-family: "Merriweather", serif;
+    margin: 0;
+    padding: 0;
+    background-color: #18181f;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Navbar */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    padding: 2vh;
+    background: rgba(17, 17, 17, 0.7);
+    z-index: 10;
+    min-height: 60px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #fff;
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+.navbar-collapse {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+.navbar-nav {
+    display: flex;
+    list-style: none;
+    margin-left: -3vh;
+    margin-top: 2vh;
+    flex-grow: 1;
+}
+
+.nav-item {
+    padding-left: 3.5vw;
+}
+
+.nav-link {
+    color: #fff;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: #ff6f61;
+}
+
+/* Call me */
+
+.callme {
+    color: #fff;
+    font-size: 1.6rem;
+    margin-right: -1rem;
+    white-space: nowrap;
+    margin-left: auto;
+    flex-shrink: 1;
+    transition: font-size 0.3s ease;
+}
+
+.numero {
+    font-weight: bold;
+    font-size: 1.6rem;
+}
+
+/* Iconos */
+
+.icons {
+    margin-right: 3rem;
+    padding-left: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text-light {
+    padding-left: 3rem;
+    font-size: 2.1rem; 
+    color: white;
+    transition: font-size 0.3s ease;
+    transform: scale(1.0);
+}
+
+/* Mostrar el botón de hamburguesa solo en pantallas pequeñas (995px o menos) */
+
+.navbar-burger {
+    display: none; /* Oculto por defecto */
+}
+
+@media (max-width: 1280px) {
+    .callme {
+        display: none;
+    }
+
+    .navbar-nav {
+        margin-bottom: 0.9rem;
+        justify-content: center;
+    }
+
+    .nav-link{
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 995px) {
+    .navbar-burger {
+        display: block;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 2.5rem;
+        margin-right: 2.5rem;
+        cursor: pointer;
+    }
+
+    /* Estilo del menu de las habilidades */
+
+    .navbar-collapse {
+        display: none; 
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 50%;
+        width: 450px;
+        height: 340px;
+        background-color: rgba(17, 17, 17, 0.9);
+        z-index: 999;
+        padding: 1rem;
+        flex-direction: column;
+        border-bottom-left-radius: 15px;
+        border-bottom: 3px solid red; 
+        border-left: 3px solid red;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        align-items: start;
+        width: 100%;
+        margin-top: -1rem;
+        margin-left: -2rem;
+    }
+
+    .nav-item {
+        padding: 20px 0;
+    }
+
+    /* Mover los iconos más a la izquierda */
+
+    .icons {
+        display: flex;
+        justify-content: flex-start; /* Alinea los íconos a la izquierda */
+        padding-left: 0; /* Eliminar cualquier espacio de relleno */
+        margin-left: -1rem; /* Eliminar cualquier margen izquierdo */
+        margin-top: 1rem;
+    }
+
+    .icons .iconos {
+        margin-right: 2rem;
+        margin-top: 1rem;
+        font-size: 50px;
+    }
+
+    .navbar-collapse.show {
+        display: block;
+    }
+
+    .nav-link{
+        font-size: 1.4rem;
+    }
+
+}
+
+@media (max-width: 745px) {
+        .navbar-burger {
+            display: block;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2.5rem;
+            margin-right: 2.5rem;
+            cursor: pointer;
+        }
+    
+        .navbar-collapse {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            left: 40%; /* Desplaza un poco más a la izquierda */
+            width: 450px;
+            height: 330px;
+            background-color: rgba(17, 17, 17, 0.9);
+            z-index: 999;
+            padding: 1rem;
+            flex-direction: column;
+            border-bottom-left-radius: 15px;
+            border-bottom: 3px solid red;
+            border-left: 3px solid red;
+        }
+    
+        .navbar-nav {
+            flex-direction: column;
+            align-items: start;
+            width: 100%;
+            margin-top: -1rem;
+            margin-left: -2rem;
+        }
+    
+        .nav-item {
+            padding: 20px 0;
+        }
+    
+        .icons {
+            display: flex;
+            justify-content: flex-start;
+            padding-left: 0;
+            margin-left: -1.5rem;
+            margin-top: 1rem;
+        }
+    
+        .icons .iconos {
+            margin-right: 2rem;
+            margin-top: 1rem;
+            font-size: 50px;
+        }
+    
+        .navbar-collapse.show {
+            display: block;
+        }
+    
+        .nav-link {
+            font-size: 1.3rem;
+        }
+}
+
+@media (max-width: 600px) {
+    .navbar-burger {
+        display: block;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 2.5rem;
+        margin-right: 2.5rem;
+        cursor: pointer;
+    }
+
+    .navbar-collapse {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 23%; /* Desplaza aún más a la izquierda para pantallas de 600px */
+        width: 440px; /* Puedes ajustar el ancho según lo que necesites */
+        height: 320px; /* Ajusta la altura también si es necesario */
+        background-color: rgba(17, 17, 17, 0.9);
+        z-index: 999;
+        padding: 1rem;
+        flex-direction: column;
+        border-bottom-left-radius: 15px;
+        border-bottom: 3px solid red;
+        border-left: 3px solid red;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        align-items: start;
+        width: 100%;
+        margin-top: -1rem;
+        margin-left: -2rem;
+    }
+
+    .nav-item {
+        padding: 20px 0;
+    }
+
+    .icons {
+        display: flex;
+        justify-content: flex-start;
+        padding-left: 0;
+        margin-left: -1.8rem;
+        margin-top: -0.5rem;
+    }
+
+    .icons .iconos {
+        margin-right: 1rem;
+        margin-top: 1rem;
+        font-size: 44px;
+    }
+
+    .navbar-collapse.show {
+        display: block;
+    }
+
+    .nav-link {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 392px) {
+    .navbar-burger {
+        display: block;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.9rem;
+        margin-right: 2.5rem;
+        cursor: pointer;
+    }
+
+    .navbar-collapse {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0; /* Desplaza aún más a la izquierda para pantallas de 392px */
+        width: 380px; /* Ajusta el ancho para pantallas más pequeñas */
+        height: 300px; /* Ajusta la altura para que se vea bien */
+        background-color: rgba(17, 17, 17, 0.9);
+        z-index: 999;
+        padding: 1rem;
+        flex-direction: column;
+        border-bottom-left-radius: 15px;
+        border-bottom: 3px solid red;
+        border-left: 3px solid red;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        align-items: start;
+        width: 100%;
+        margin-top: -1rem;
+        margin-left: -2rem;
+    }
+
+    .nav-item {
+        padding: 20px 0;
+    }
+
+    .icons {
+        display: flex;
+        justify-content: flex-start;
+        padding-left: 0;
+        margin-left: -0.2rem; /* Ajusta el margen para el desplazamiento */
+        margin-top: -0.5rem;
+    }
+
+    .icons .iconos {
+        margin-right: 1rem;
+        margin-top: 1rem;
+        font-size: 45px; /* Reduce un poco el tamaño de los iconos */
+    }
+
+    .navbar-collapse.show {
+        display: block;
+    }
+
+    .nav-link {
+        font-size: 1.1rem; /* Reduce el tamaño de los links para que se ajusten mejor */
+    }
+}
