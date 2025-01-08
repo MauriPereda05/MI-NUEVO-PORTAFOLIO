@@ -66,6 +66,37 @@ body {
     color: #ff6f61;
 }
 
+/* Animacion de los enlaces */
+
+/* Añadir una línea roja debajo del enlace seleccionado */
+.nav-link.active {
+    position: relative;
+    color: #ff6f61;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* Ajusta la posición de la línea */
+    left: 0;
+    width: 100%;
+    height: 3px; /* Grosor de la línea */
+    background-color: #ff6f61; /* Color de la línea */
+    animation: slideIn 0.3s ease-out; /* Animación para el deslizamiento */
+}
+
+/* Animación de la línea roja */
+@keyframes slideIn {
+    0% {
+        width: 0;
+        left: 50%;
+    }
+    100% {
+        width: 100%;
+        left: 0;
+    }
+}
+
 /* Call me */
 
 .callme {
@@ -376,5 +407,86 @@ body {
 
     .nav-link {
         font-size: 1.1rem; /* Reduce el tamaño de los links para que se ajusten mejor */
+    }
+
+    /* Responsivo del Home */
+
+    body .welcome-content {
+        margin-left: 0.8rem;
+        margin-top: 7rem; /* Aumenta el margen superior */
+    }
+    
+    body .welcome-fill, body .welcome-text {
+        font-size: 5.5rem;
+    }
+    
+
+    
+}
+
+/* Parte del Home */
+
+/* La bienvenida */
+.welcome-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    min-height: 50vh;    
+}
+
+
+.welcome-text {
+    stroke-dasharray: 400;
+    stroke-dashoffset: 400;
+    animation: drawText 4s linear forwards;
+    stroke-linecap: round;
+}
+
+
+@keyframes drawText {
+    0% {
+        stroke-dashoffset: 400;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+
+.welcome-fill {
+    opacity: 0; 
+    fill: none; 
+    stroke: none; 
+    transition: opacity 0.5s ease-in, fill 0.2s ease-in; 
+    animation: fillText 0.1s ease-in-out 6s forwards;
+}
+
+@keyframes fillText {
+    100% {
+        opacity: 1;
+        fill: #ffffff;
+    }
+}
+
+.welcome-container.written .welcome-fill {
+    opacity: 1;
+    fill: #ffffff; 
+    stroke: none; 
+}
+
+@media (max-width: 1280px) {
+    .welcome-content {
+        align-items: flex-start; /* Alinea el contenido en la parte superior */
+        min-height: 50vh; /* Mantiene el contenedor en la altura completa de la ventana */
+        margin-top: 2rem;
+    }
+}
+
+/* Media query para pantallas más pequeñas, como en el caso del iPad Pro */
+@media (max-width: 1025px) {
+    .welcome-content {
+        align-items: flex-start; /* Alinea el contenido en la parte superior */
+        min-height: 50vh; /* Mantiene el contenedor en la altura completa de la ventana */
+        margin-top: 3rem;
     }
 }
