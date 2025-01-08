@@ -412,16 +412,12 @@ body {
     /* Responsivo del Home */
 
     body .welcome-content {
-        margin-left: 0.4rem;
         margin-top: 7rem; /* Aumenta el margen superior */
     }
     
     body .welcome-fill, body .welcome-text {
         font-size: 5.5rem;
     }
-    
-
-    
 }
 
 /* Parte del Home */
