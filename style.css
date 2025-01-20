@@ -159,7 +159,7 @@ body {
         background: none;
         border: none;
         color: white;
-        font-size: 2.5rem;
+        font-size: 2.3rem;
         margin-right: 2.5rem;
         cursor: pointer;
     }
@@ -219,7 +219,36 @@ body {
         font-size: 1.4rem;
     }
 
+    /* Responsivo del Home para pantallas grandes */
+
+    body .welcome-content {
+        margin-top: 3.8rem; 
+        align-items: flex-start; 
+        min-height: 50vh; 
+        margin-top: 2rem;
+    }
+    
+    body .welcome-fill, body .welcome-text {
+        font-size: 3rem;
+    }
+
 }
+
+@media (min-width: 768px) and (max-width: 820px) and (min-height: 1024px) and (max-height: 1180px) {
+    .titulo {
+        font-size: 5.1vh !important;
+    }
+    
+    .contenido .titulo {
+        margin-top: 0.8rem;
+        margin-left: 1rem;
+    }
+
+    .subtitulo {
+        display: none;
+    }
+}
+
 
 @media (max-width: 745px) {
         .navbar-burger {
@@ -227,7 +256,7 @@ body {
             background: none;
             border: none;
             color: white;
-            font-size: 2.5rem;
+            font-size: 2.3rem;
             margin-right: 2.5rem;
             cursor: pointer;
         }
@@ -282,7 +311,27 @@ body {
         .nav-link {
             font-size: 1.3rem;
         }
+
+    /* Responsivo del Home para pantallas medianas */
+
+    body .welcome-content {
+        margin-top: 7rem; 
+        margin-left: 0.4rem;
+    }
+    
+    body .welcome-fill, body .welcome-text {
+        font-size: 5.6rem;
+    }
+
+    .welcome-text, .welcome-fill {
+        display: block !important;
+    }
+
+    .titulo, .subtitulo {
+        display: none;
+    }
 }
+
 
 @media (max-width: 600px) {
     .navbar-burger {
@@ -290,7 +339,7 @@ body {
         background: none;
         border: none;
         color: white;
-        font-size: 2.5rem;
+        font-size: 2.3rem;
         margin-right: 2.5rem;
         cursor: pointer;
     }
@@ -300,7 +349,7 @@ body {
         position: absolute;
         top: 100%;
         right: 0;
-        left: 23%; /* Desplaza aún más a la izquierda para pantallas de 600px */
+        left: 25%; /* Desplaza aún más a la izquierda para pantallas de 600px */
         width: 440px; /* Puedes ajustar el ancho según lo que necesites */
         height: 320px; /* Ajusta la altura también si es necesario */
         background-color: rgba(17, 17, 17, 0.9);
@@ -335,7 +384,7 @@ body {
     .icons .iconos {
         margin-right: 1rem;
         margin-top: 1rem;
-        font-size: 44px;
+        font-size: 46px;
     }
 
     .navbar-collapse.show {
@@ -344,6 +393,25 @@ body {
 
     .nav-link {
         font-size: 1.2rem;
+    }
+
+    /* Responsivo del Home para pantallas pequeñas */
+
+    body .welcome-content {
+        margin-top: 7rem; /* Aumenta el margen superior */
+        margin-left: 0.4rem;
+    }
+    
+    body .welcome-fill, body .welcome-text {
+        font-size: 5.6rem;
+    }
+
+    .welcome-text, .welcome-fill {
+        display: block !important;
+    }
+
+    .titulo, .subtitulo {
+        display: none;
     }
 }
 
@@ -409,7 +477,7 @@ body {
         font-size: 1.1rem; /* Reduce el tamaño de los links para que se ajusten mejor */
     }
 
-    /* Responsivo del Home */
+    /* Responsivo del Home para pantallas muy pequeñas */
 
     body .welcome-content {
         margin-top: 7rem; /* Aumenta el margen superior */
@@ -418,6 +486,15 @@ body {
     body .welcome-fill, body .welcome-text {
         font-size: 5.5rem;
     }
+
+    .welcome-text, .welcome-fill {
+        display: block !important;
+    }
+
+    .titulo, .subtitulo {
+        display: none;
+    }
+
 }
 
 /* Parte del Home */
@@ -428,6 +505,8 @@ body {
     justify-content: center;
     align-items: center;  
     min-height: 50vh;    
+    margin-top: 4rem;
+    margin-left: 2rem;
 }
 
 
@@ -437,7 +516,6 @@ body {
     animation: drawText 4s linear forwards;
     stroke-linecap: round;
 }
-
 
 @keyframes drawText {
     0% {
@@ -470,19 +548,79 @@ body {
     stroke: none; 
 }
 
+.welcome-text, .welcome-fill {
+    display: none;
+}
+
+
+/* sobre mi */
+
+.titulo {
+    position: absolute;
+    top: 15%;               /* Lo coloca en la parte superior de la página */
+    left: 47%;              /* Lo centra horizontalmente */
+    transform: translateX(-50%); /* Ajusta la posición horizontal al centro */
+    color: white;
+    font-size: 8vh;       /* Tamaño de la fuente relativo a la altura de la ventana */
+    font-family: "Rubik", serif;
+    font-weight: 400;
+    white-space: nowrap;    /* Evita que el texto se divida en varias líneas */
+}
+
+
+.subtitulo {
+    position: absolute;
+    top: 30vh;
+    left: 47%;               /* Ajusta la posición a la mitad de la pantalla */
+    transform: translateX(-50%); /* Centra el elemento horizontalmente */
+    color: rgb(192, 192, 192);
+    font-size: 2vh;
+    font-family: "Libre Baskerville", serif;
+    font-weight: 900;
+    white-space: nowrap;    /* Evita que el texto se divida en varias líneas */
+}
+
+
+
 @media (max-width: 1280px) {
-    .welcome-content {
-        align-items: flex-start; /* Alinea el contenido en la parte superior */
-        min-height: 50vh; /* Mantiene el contenedor en la altura completa de la ventana */
-        margin-top: 2rem;
+    .titulo {
+        font-size: 7.7vh;
+        margin-left: 0.7rem;
+
+    }
+    .subtitulo {
+        position: absolute;
+        top: 30vh;
+        left: 48.2%;               /* Ajusta la posición a la mitad de la pantalla */
+        transform: translateX(-50%); /* Centra el elemento horizontalmente */
+        color: rgb(192, 192, 192);
+        font-size: 1.9vh;
+        font-family: "Libre Baskerville", serif;
+        font-weight: 900;
+        white-space: nowrap;    /* Evita que el texto se divida en varias líneas */
     }
 }
 
 /* Media query para pantallas más pequeñas, como en el caso del iPad Pro */
-@media (max-width: 1025px) {
-    .welcome-content {
-        align-items: flex-start; /* Alinea el contenido en la parte superior */
-        min-height: 50vh; /* Mantiene el contenedor en la altura completa de la ventana */
-        margin-top: 3rem;
+@media (min-width: 1024px) and (max-width: 1024px) and (min-height: 1366px) and (max-height: 1366px) {
+    .titulo {
+        /* Aquí colocas los estilos que solo se aplicarán a la resolución de 1024x1366 */
+        font-size: 4.6vh; /* Ejemplo de manipulación del tamaño de fuente */
+        margin-left: 1.7rem; /* Ajuste de márgenes */
+        margin-top: -0.6rem;
+    }
+
+    .subtitulo {
+        position: absolute;
+        top: 20.5vh;
+        left: 49.7%;               /* Ajusta la posición a la mitad de la pantalla */
+        transform: translateX(-50%); /* Centra el elemento horizontalmente */
+        color: rgb(192, 192, 192);
+        font-size: 1.1vh;
+        font-family: "Libre Baskerville", serif;
+        font-weight: 900;
+        white-space: nowrap;    /* Evita que el texto se divida en varias líneas */
     }
 }
+
+
