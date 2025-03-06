@@ -1038,10 +1038,10 @@ body {
     }
 
     .lenguaje-detalle {
-        top: 49%;  /* Movemos el contenedor más abajo */
+        top: 52%;  /* Movemos el contenedor más abajo */
         left: 50%;
         width: 230px; 
-        height: 370px;
+        height: 390px;
     }
 }
 
@@ -1094,6 +1094,8 @@ body {
 .hidden {
     display: none;
 }
+
+
 
 
 
