@@ -1095,18 +1095,6 @@ body {
     display: none;
 }
 
-#education {
-    min-height: 88.3vh; /* Asegura que ocupe toda la altura de la pantalla */
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centra el contenido verticalmente */
-}
-
-
-
-
-
-
 
 
 /* Estilos para el footer */
