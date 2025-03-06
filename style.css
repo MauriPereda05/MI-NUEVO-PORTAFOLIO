@@ -278,6 +278,10 @@ body {
         object-fit: contain; 
         
     }
+
+    .lenguaje-detalle {
+        margin-top: -14rem;
+    }
 }
 
 
@@ -302,6 +306,11 @@ body {
         max-width: 650px;
         object-fit: contain; 
         
+    }
+
+    body .lenguaje-detalle {
+        top: 37% ;  /* Movemos el contenedor más abajo */
+        left: 50%;
     }
 
 }
@@ -601,7 +610,6 @@ body {
     .imagen {
         display: none;
     }
-
 }
 
 /* Parte del Home */
@@ -692,12 +700,764 @@ body {
 .imagen {
     position: absolute;
     top: 18.8vh;
-    left: 46.4%;               
+    left: 46.2%;               
     transform: translateX(-50%);
     height: 44rem;
     
 }
 
+/* Boton para descargar mi CV */
+
+.btn-14 {
+    position: relative;
+    color: #00aced;
+    border: none;
+    z-index: 2;
+
+    width: 20rem;
+    height: 2.5rem;
+    background-color: rgb(10, 10, 10);
+}
+.btn-14:before,
+.btn-14:after {
+    position: absolute;
+    content: "";
+    width: 20%;
+    height: 20%;
+    border: 1px solid;
+
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+.btn-14:before{
+     top: 0;
+     left: 0;
+     border-bottom-color: transparent;
+     border-right-color: transparent;
+     border-top-color: #00aced;
+     border-left-color: #00aced;
+}
+.btn-14:after{
+     bottom: 0;
+     right: 0;
+     border-top-color: transparent;
+     border-left-color: transparent;
+     border-bottom-color: #00aced;
+     border-right-color: #00aced;
+}
+.btn-14:hover:before,
+.btn-14:hover:after {
+    border-color: #00aced;
+    height: 100%;
+    width: 100%;
+    box-shadow: 0 0 5px #00aced, 0 0 5px #00aced inset;
+}
+
+.frame {
+    width: 90%;
+    margin-top: 13.5rem;
+    margin-left: 3rem;
+    text-align: center;
+}
+
+/* Para el proyecto */
+
+.hidden {
+    display: none;
+}
+
+/* Estilos para la galería */
+
+.gallery > .card {
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
+}
+
+
+
+.gallery {
+    display: grid;
+    grid-template-columns: 
+       repeat(
+        auto-fit,
+        minmax(150px, 1fr)
+       );
+    gap: 32px;
+}
+
+/* Estilos para los skills */
+
+.habilidad-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 19.5rem;
+    margin-right: 1.5rem;
+}
+
+.habilidad {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    max-width: 1000px;
+    background-color: rgba(225, 53, 44, 0.8);
+    border-radius: 2rem;
+    padding: 2rem;
+    transition: all 0.3s ease-in-out;
+
+    margin-left: 2.4rem;
+}
+
+/* Ocultar todos los lenguajes cuando uno es seleccionado */
+.habilidad.hidden {
+    display: none;
+}
+
+/* Estilos de cada lenguaje */
+.learning {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 120px;
+    text-align: center;
+    gap: 10px;
+    background-color: #000;
+    padding: 1rem;
+    border-radius: 2rem;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+    color: white;
+}
+
+/* Imagen dentro del cuadro */
+.learning img {
+    width: 80px;
+    height: 80px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Estilos cuando un lenguaje está centrado */
+.lenguaje-detalle {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    height: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    font-family: sans-serif;
+}
+
+.lenguaje-detalle img {
+    width: 100px;
+    height: 100px;
+}
+
+/* Botones */
+.detalle-botones {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.boton {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.boton-salir {
+    background-color: red;
+    color: white;
+}
+
+.boton-mas {
+    background-color: blue;
+    color: white;
+}
+
+/* Animación de desaparición */
+.fade-out {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Animación de aparición */
+.fade-in {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Centrar la información en la página */
+.lenguaje-detalle {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    padding: 2rem;
+    border-radius: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    height: 400px;
+    position: fixed;
+    top: 50%;
+    left: 48.6%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.imagenlenguaje {
+    width: 7rem;
+    height: 7rem;
+    border-radius: 1rem;
+}
+
+.parrafo {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.skillss {
+    position: absolute;
+    top: 10%;
+    left: 48.6%;
+    color: white;
+    font-size: 4.5rem;
+    transform: translateX(-50%); /* Ajusta la posición horizontal al centro */
+    white-space: nowrap;    /* Evita que el texto se divida en varias líneas */
+    border-bottom: 2px solid white; 
+}
+
+
+
+/* Primera fila: HTML, CSS3, JavaScript, Bootstrap, Node.js y React.js */
+.learning:nth-child(1),
+.learning:nth-child(2),
+.learning:nth-child(3),
+.learning:nth-child(4),
+.learning:nth-child(5),
+.learning:nth-child(6) {
+    order: 1; /* Se mantienen en la primera fila */
+}
+
+/* Segunda fila: Git y GitHub */
+.learning:nth-child(7),
+.learning:nth-child(8) {
+    order: 2; /* Se mueven a la segunda fila */
+    width: 120px; /* Ajusta el ancho si es necesario */
+}
+
+
+@media (max-width: 1024px) {
+    .habilidad {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+        justify-content: center;
+    }
+
+    .skillss {
+        font-size: 4.6rem;
+        left: 51%;
+    }
+
+    .lenguaje-detalle {
+        top: 48%;
+        left: 51%;
+    }
+}
+
+/* Responsivo: Pasar a una sola columna cuando sea <= 700px */
+@media (max-width: 768px) {
+    .habilidad {
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: -4rem;
+        margin-right: 0.8rem;
+        padding: 1.5rem;
+    }
+
+    .habilidad-container {
+        padding-bottom: 10rem;
+    }
+
+    .learning {
+        padding: 1rem;
+
+    }
+
+    .skillss {
+        font-size: 3.5rem;
+        left: 51%;
+    }
+
+    .lenguaje-detalle {
+        top: 46%;
+        left: 50%;
+        width: 300px;
+        height: 350px;
+    }
+}
+
+@media (max-width: 400px) {
+    .habilidad {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 1rem;
+    }
+
+    .skillss {
+        font-size: 3rem;
+        top: 15%; /* Bajamos un poco el texto */
+    }
+
+    .learning {
+        padding: 0.2rem;
+    }
+
+    .learning img {
+        width: 70px;  /* Reducir el ancho */
+        height: 70px; /* Reducir la altura */
+        padding: 1rem;
+    }
+
+    .lenguaje-detalle {
+        top: 49%;  /* Movemos el contenedor más abajo */
+        left: 50%;
+        width: 230px; 
+        height: 370px;
+    }
+}
+
+/* estilos para education */
+
+.education-line {
+    width: 78%;
+    height: 5px;
+    background-color: red;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.education-icons {
+    position: absolute;
+    top: calc(50% - 5px); /* Ajuste para que los iconos estén alineados mejor */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    flex-wrap: wrap;
+}
+
+.icon {
+    width: 50px;  /* Ajusta el tamaño según lo necesites */
+    height: 50px; /* Asegura proporción */
+    background-color: white;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    object-fit: contain; /* Para mantener la proporción de las imágenes */
+}
+
+
+.top {
+    transform: translateY(-80px); /* Ajuste para que estén justo arriba de la línea */
+}
+
+.bottom {
+    transform: translateY(40px); /* Ajuste para que esté justo abajo de la línea */
+}
+
+/* Informacion de mis estudios */
+
+
+.hidden {
+    display: none;
+}
+
+#education {
+    min-height: 88.3vh; /* Asegura que ocupe toda la altura de la pantalla */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra el contenido verticalmente */
+}
+
+
+
+
+
+
+
+
+/* Estilos para el footer */
+
+.footer {
+    background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+    color: white;
+    text-align: center;
+    padding: 10px 0px;
+    font-size: 1.1rem;
+    width: 100%;
+    position: absolute;
+    bottom: -0rem;
+    left: 0;
+    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Contenedor flexible */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1800px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0 1rem;
+}
+
+
+.footer-divider {
+    width: 100%; /* Ocupa todo el ancho */
+    height: 1px; /* Grosor de la línea */
+    background-color: white; /* Color de la línea */
+    margin-bottom: 0rem; /* Espaciado debajo de la línea */
+}
+/* Links del footer */
+.footer-nav {
+    display: flex;
+    gap: 3rem;
+}
+
+.footer-nav a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-nav a:hover {
+    color: #e03e3e;
+}
+
+@media (max-width: 1400px) {
+    .footer {
+        position: relative; 
+        padding: 14px 0px;
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        position: relative;
+    }
+
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* 🔹 Mueve los enlaces arriba */
+    .footer-nav {
+        order: -1;
+        margin-top: 1rem;
+        margin-left: 1rem;
+        gap: 2.5rem;
+    }
+
+    
+    .footer-divider {
+        width: 100%;
+        height: 0.5px;
+        background-color: white;
+        margin: 0rem 0;
+    }
+
+    
+    .footer-copy {
+        order: 1;
+        margin-top: 0rem;
+    }
+}
+
+
+@media (max-width: 500px) {
+    .footer {
+        margin-bottom: 2rem;
+        padding: 56px 0px; 
+        min-height: 120px;
+    }
+    .footer-nav {
+        margin-right: 0.8rem;
+    }
+}
+
+@media (max-width: 390px) {
+    .footer {
+        padding: 30px 0px;
+        margin-top: 2rem;
+        margin-bottom: 0rem !important; 
+    }
+
+    .footer-nav {
+        margin-bottom: 1rem;
+        margin-right: 0.9rem;
+        gap: 0.9rem;
+    }
+}
+
+/* Estilos para los cards sin modificar .gallery o .gallery > .card */
+
+.gallery {
+    justify-content: center; /* Centra los cards horizontalmente */
+    padding: 20px;           /* Espaciado interno para evitar que los cards toquen los bordes */
+    margin-top: 18rem;
+}
+
+.card {        
+    height: 450px;  
+    background-color: #fff;  /* Fondo blanco para los cards */
+    border-radius: 8px;      /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    overflow: hidden;        /* Evita que el contenido sobresalga */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Efecto de levantar el card al pasar el mouse */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+}
+
+/* Estilos para la imagen dentro del card */
+.card-img {
+    width: 100%;
+    height: 180px;          
+    object-fit: cover;      
+}
+
+/* Estilos para el cuerpo del card */
+.card-body {
+    padding: 16px;
+    text-align: center; /* Centra el contenido del card */
+    display: flex;
+    flex-direction: column; /* Organiza los elementos en una columna */
+    justify-content: flex-start; /* Alinea el texto hacia la parte superior */
+    height: 100%; /* Asegura que el contenedor tenga suficiente altura */
+    gap: 0.5rem; /* Espacio entre los elementos (titulo y texto) */
+}
+
+/* Estilos para el título del card */
+.card-title {
+    font-size: 2rem;
+    margin-top: 0rem;
+    color: #333;             /* Color del texto */
+    border-bottom: 2px solid black; /* Línea debajo del título */
+    padding-bottom: 10px; /* Espaciado entre el título y la línea */
+}
+
+
+/* Estilos para el texto del card */
+.card-text {
+    font-size: 0.9rem;
+    color: black;
+    position: relative;
+    top: -47px;  
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* Estilos para el botón del card */
+.card-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #007bff; /* Color de fondo del botón */
+    color: #fff;              /* Color del texto del botón */
+    text-decoration: none;
+    border-radius: 4px;       /* Bordes redondeados */
+    transition: background-color 0.3s ease; /* Transición suave */
+    margin-top: -30px;
+}
+
+.card-btn:hover {
+    background-color: #0056b3; /* Cambio de color al pasar el mouse */
+}
+
+.proyectoss {
+    position: absolute;
+    top: 12%;
+    left: 48.7%;
+    color: white;
+    font-size: 4.5rem;
+    transform: translateX(-50%); /* Ajusta la posición horizontal al centro */
+    white-space: nowrap;    /* Evita que el texto se divida en varias líneas */
+    border-bottom: 2px solid white; 
+}
+
+
+@media (max-width: 1024px) {
+    .gallery {
+        margin-top: 15.6rem;
+    }
+
+    .gallery .card {
+        height: auto;          /* Ajusta la altura automáticamente según el contenido */
+        min-height: 28rem;   /* Establece una altura mínima para asegurar que no sea muy pequeña */
+    }
+
+    .card-title {
+        /* Mantener alineación e integridad del título */
+        font-size: 1.4rem; /* Ajusta el tamaño del título para que se mantenga legible en pantallas pequeñas */
+        font-weight: bold; /* Asegura que el título resalte */
+        line-height: 1.2; /* Ajusta la altura de línea para mejorar la legibilidad */
+        text-align: center; /* Asegura que el título se alinee a la izquierda (o centrado, dependiendo de tu preferencia) */
+    }
+
+   .card-text{
+    font-size: 0.8rem;
+    font-weight: 500;
+   }
+
+   .card-btn {
+    margin-top: -3rem;
+   }
+
+   .proyectoss {
+        position: absolute;
+        top: 10.9%;
+        left: 51%;
+        color: white;
+        font-size: 3rem;
+        transform: translateX(-50%);  
+        border-bottom: 2px solid white; 
+        padding-bottom: 1px; 
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery {
+        margin-top: 11rem;
+        display: flex;          /* Cambiamos a flex para que los items estén en columna */
+        flex-direction: column; /* Alineamos los cards verticalmente */
+        gap: 30px;              /* Espacio entre cada card */
+    }
+
+    .gallery .card {
+        height: auto; /* Permite que la tarjeta ajuste su altura dependiendo del contenido */
+        min-height: 28rem; /* Establece un mínimo si se requiere */
+        width: 100%;
+    }
+
+    .card-body {
+        display: flex;
+        flex-direction: column; /* Mantener el texto y el botón en columna */
+        justify-content: flex-start; /* Asegurar que todo se alinee desde el principio */
+        height: 100%; /* Hace que el body ocupe toda la altura */
+    }
+
+    .card-title {
+        font-size: 1.5rem;  /* Reducir el tamaño de la fuente para que quepa mejor */
+    }
+
+    .card-text {
+        font-size: 0.85rem; /* Reducir el tamaño del texto */
+        margin-bottom: 10px; /* Espacio entre el texto y el botón */
+        flex-grow: 0; /* El texto no crecerá ni empujará el botón */
+    }
+
+    .card-btn {
+        padding: 6px 16px; /* Ajuste de padding */
+        font-size: 0.9rem;
+        width: 80%; /* Reducir el ancho del botón */
+        max-width: 400px; /* Limita el tamaño del botón */
+        margin-left: auto; /* Asegura que el botón esté centrado */
+        margin-right: auto; /* Asegura que el botón esté centrado */
+        box-sizing: border-box;
+        margin-top: -1.9rem;
+    }
+
+    .proyectoss {
+        position: absolute;
+        top: 10.2%;
+        left: 49.3%;
+        color: white;
+        font-size: 2.5rem;
+        transform: translateX(-50%);  
+        border-bottom: 2px solid white; /* Borde blanco debajo del texto */
+        padding-bottom: 1px; /* Agrega espacio entre el texto y el borde, ajusta según lo necesites */
+    }
+}
+
+
+
+@media (max-width: 370px) {
+    .gallery {
+        margin-top: 11rem;
+    }
+
+    .gallery .card {
+        height: auto;          /* Ajusta la altura automáticamente según el contenido */
+        min-height: 28.5rem;   /* Establece una altura mínima para asegurar que no sea muy pequeña */
+        width: 100%;           /* Ocupa todo el ancho disponible */
+    }
+
+    .gallery .card-body {
+        display: flex;
+        flex-direction: column; /* Alineamos el contenido de la tarjeta verticalmente */
+        justify-content: flex-start; /* Aseguramos que el contenido esté al principio */
+        height: 100%;           /* Asegura que el body de la tarjeta ocupe toda la altura disponible */
+    }
+
+    .card-title {
+        font-size: 1.5rem;  /* Reducir el tamaño de la fuente para que quepa mejor */
+    }
+
+    .card-text {
+        font-size: 0.85rem; /* Reducir tamaño de la fuente del texto */
+    }
+
+    .card-btn {
+        padding: 6px 1px;  
+        font-size: 0.9rem;   
+        margin-top: -3rem;
+                
+    }
+
+    .proyectoss {
+        position: absolute;
+        top: 13.4%;
+        left: 48.9%;
+        color: white;
+        font-size: 1.9rem;
+        transform: translateX(-50%); 
+        white-space: nowrap;    
+        border-bottom: 2px solid white; /* Borde blanco debajo del texto */
+        padding-bottom: 1px; /* Agrega espacio entre el texto y el borde, ajusta según lo necesites */
+    }
+
+   
+}
 
 
 @media (max-width: 1280px) {
@@ -747,6 +1507,11 @@ body {
         object-fit: contain; 
     }
 
+    .lenguaje-detalle {
+        top: 32% ;  /* Movemos el contenedor más abajo */
+        left: 50%;
+    }
+
     
 }
 
@@ -757,6 +1522,28 @@ body {
         max-width: 580px;
         object-fit: contain; 
     }
+
+    .gallery {
+        margin-top: 11rem;
+    }
+
+    .lenguaje-detalle {
+        top: 55% ;  /* Movemos el contenedor más abajo */
+        left: 50%;
+    }
 }
+
+.section-exit {
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.section-enter {
+    opacity: 1;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+
+
 
 

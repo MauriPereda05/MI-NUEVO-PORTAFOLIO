@@ -29,10 +29,10 @@
             <!-- Enlaces de habilidades -->
             <div class="navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Proyectos</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Skills</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Education</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" id="home-link">Home</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" id="proyectos-link">Proyectos</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" id="skills-link">Skills</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" id="education-link">Education</a></li>
                 </ul>
 
                 <!-- El texto de Call me al final -->
@@ -51,28 +51,143 @@
     
     <!-- Parte del Home -->
      
-    <div class="welcome-container">
-        <!-- Texto animado -->
-        <div class="welcome-content">
-            <svg xmlns="http://www.w3.org/2000/svg" id="welcome" viewBox="0 0 600 150">
-                <!-- Texto con animación -->
-                <text class="welcome-text" x="20" y="100" font-size="40" fill="none" stroke="#2b3050" stroke-width="2">
-                    BIENVENIDO
-                </text>
-                <!-- Texto relleno que se activa después de completar la animación -->
-                <text class="welcome-fill" x="20" y="100" font-size="40" fill="#ffffff" stroke="none" opacity="0">
-                    BIENVENIDO
-                </text>
-            </svg>
+   
+    <div id="home" class="section">
+        <div class="welcome-container">
+            <!-- Texto animado -->
+            <div class="welcome-content">
+                <svg xmlns="http://www.w3.org/2000/svg" id="welcome" viewBox="0 0 600 150">
+                    <!-- Texto con animación -->
+                    <text class="welcome-text" x="20" y="100" font-size="40" fill="none" stroke="#2b3050" stroke-width="2">
+                        BIENVENIDO
+                    </text>
+                    <!-- Texto relleno que se activa después de completar la animación -->
+                    <text class="welcome-fill" x="20" y="100" font-size="40" fill="#ffffff" stroke="none" opacity="0">
+                        BIENVENIDO
+                    </text>
+                </svg>
+            </div>
+    
+            <!-- Sobre mi -->
+            <div class="contenido">
+                <h1 class="titulo">Hola, soy Mauricio Pereda</h1>
+                <h2 class="subtitulo">Soy Mauricio, desarrollador Front-end y amante del diseño web y creando experiencias digitales intuitivas.</h2>
+                <img class="imagen" src="./img/logo portafolio 3.png" alt="">
+            </div>
+    
+            <!-- Boton para descargar mi CV -->
+            <div class="frame">
+                <button class="custom-btn btn-14" onclick="descargarCV()">Descargar mi CV</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Parte de los Proyectos -->
+
+    <div id="proyectos" class="section hidden">
+        <h1 class="proyectoss">MIS PROYECTOS</h1>
+            <section class="gallery">
+                <article class="card">
+                    <img src="https://github.com/MauriPereda05/MI-PROYECTO-FINAL/raw/main/image.png" class="card-img" alt="Una Tienda de Comida Rapida">
+                    <div class="card-body">
+                        <h5 class="card-title">Tienda de Comida Rapida</h5>
+                        <p class="card-text">He creado una aplicación web interactiva para una tienda de comida rápida usando React. Permite a los usuarios explorar el menú, seleccionar productos, añadirlos al carrito y realizar pedidos de forma rápida y sencilla, todo con una interfaz intuitiva.</p>
+                        <a href="https://mi-proyecto-final-psi.vercel.app/" target="_blank" class="card-btn">Ir a mi proyecto</a>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="https://raw.githubusercontent.com/MauriPereda05/VITE-Y-JSON-SERVER/refs/heads/main/image.png" class="card-img" alt="Un Sistema de Registro de Usuarios">
+                    <div class="card-body">
+                        <h5 class="card-title">Sistema de Registro de Usuarios</h5>
+                        <p class="card-text">Desarrollé una aplicación web de gestión de usuarios utilizando Vite, HTML, CSS y JavaScript. Esta permite agregar, visualizar, actualizar y eliminar usuarios de manera sencilla.</p>
+                        <a href="https://vite-y-json-server.vercel.app/" target="_blank" class="card-btn">Ir a mi proyecto</a>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="./img/proyecto3.png" class="card-img" alt="Una Tienda en Linea con Carrito de Compras">
+                    <div class="card-body">
+                        <h5 class="card-title">Tienda con Carrito de Compras</h5>
+                        <p class="card-text">Desarrollé una tienda en línea funcional con un carrito de compras interactivo utilizando HTML, CSS y JavaScript. La aplicación permite agregar productos al carrito y visualizar el total y realizar compras, proporcionando una experiencia de usuario fluida y eficiente.</p>
+                        <a href="https://proyecto-del-carrito-de-compras.vercel.app/" target="_blank" class="card-btn">Ir a mi proyecto</a>
+                    </div>
+                </article>
+            </section>
     </div>
 
-    <!-- Sobre mi -->
+    <!-- Parte de las Skills -->
 
-    <div class="contenido">
-        <h1 class="titulo">Hola, soy Mauricio Pereda</h1>
-        <h2 class="subtitulo">Soy Mauricio, desarrollador Front-end y amante del diseño web y creando experiencias digitales intuitivas.</h2>
-        <img class="imagen" src="./img/logo portafolio 3.png" alt="">
+    <div id="skills" class="section hidden">
+        <section class="habilidad-container">
+            <h1 class="skillss">MIS SKILLS</h1>
+            <section class="habilidad">
+                <article class="learning">
+                    <img class="imagenlenguaje" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/512px-HTML5_logo_and_wordmark.svg.png" alt="">
+                    <span class="parrafo">HTML</span>
+                </article>
+                <article class="learning">
+                    <img class="imagenlenguaje" src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="">
+                    <span class="parrafo">CSS3</span>
+                </article>
+                <article class="learning">
+                    <img class="imagenlenguaje" src="./img/JavaScript.png" alt="">
+                    <span class="parrafo">JavaScript</span>
+                </article>
+                <article class="learning">
+                    <img class="imagenlenguaje" src="./img/bootstrap.png" alt="">
+                    <span class="parrafo">Bootstrap</span>
+                </article>
+                <article class="learning">
+                    <img class="imagenlenguaje" src="./img/nodejs.png" alt="">
+                    <span class="parrafo">Nodejs</span>
+                </article>
+                <article class="learning">
+                    <img class="imagenlenguaje" src="./img/react.png" alt="">
+                    <span class="parrafo">React.js</span>
+                </article>
+                <article class="learning">
+                    <img class="imagenlenguaje" src="./img/git.png" alt="">
+                    <span class="parrafo">Git</span>
+                </article>
+                <article class="learning">
+                    <img class="imagenlenguaje" src="./img/GitHub.svg" alt="">
+                    <span class="parrafo">Github</span>
+                </article>
+            </section>
+        </section>
     </div>
+
+    <!-- Parte de education -->
+
+    <section id="education" class="section hidden">
+       
+    </section>
+    
+    
+    
+    
+
+    <!-- Parte del footer -->
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-divider"></div> <!-- Línea horizontal -->
+            <p class="footer-copy">© 2025 | Todos los derechos reservados.</p>
+    
+            <nav class="footer-nav">
+                <a href="#home">Inicio</a>
+                <a href="#proyectos">Proyectos</a>
+                <a href="#skills">Skills</a>
+                <a href="#education">Education</a>
+            </nav>
+        </div>
+    </footer>
+    
+    
+    
+    
+    
+    
+
 
     
 
