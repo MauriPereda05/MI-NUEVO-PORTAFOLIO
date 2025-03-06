@@ -1151,7 +1151,7 @@ body {
 }
 
 @media (max-width: 1400px) {
-    .footer {
+    .footer #education {
         position: relative; 
         padding: 14px 0px;
         margin-top: 1rem;
@@ -1159,7 +1159,7 @@ body {
 }
 
 @media (max-width: 768px) {
-    .footer {
+    .footer #education {
         position: relative;
     }
 
