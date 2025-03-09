@@ -1422,7 +1422,7 @@ body {
 
 @media (max-width: 390px) {
     .footer {
-        padding: 30px 0px;
+        padding: 10px 0px;
         margin-top: 2rem;
         margin-top: auto;
         margin-bottom: 0rem !important; 
