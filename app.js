@@ -242,7 +242,96 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+    const items = document.querySelectorAll(".carousel-item");
+    let currentIndex = 0;
 
+    function updateCarousel() {
+        items.forEach((item, index) => {
+            item.classList.remove("active");
+            if (index === currentIndex) {
+                item.classList.add("active");
+            }
+        });
+    }
 
+    document.querySelector(".next").addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % items.length;
+        updateCarousel();
+    });
 
+    document.querySelector(".prev").addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + items.length) % items.length;
+        updateCarousel();
+    });
 
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % items.length;
+        updateCarousel();
+    }, 3000);
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const items = document.querySelectorAll(".carousel-item");
+    const carouselContainer = document.querySelector(".carousel-container");
+    const selectedImageContainer = document.querySelector(".selected-image-container");
+    const selectedImage = document.getElementById("selected-image");
+    const selectedText = document.getElementById("selected-text");
+    const prevButton = document.querySelector(".prev");
+    const nextButton = document.querySelector(".next");
+    const exitButton = document.getElementById("exit-button");
+    
+    let currentIndex = 0;
+
+    function updateCarousel() {
+        items.forEach((item, index) => {
+            item.classList.remove("active");
+            if (index === currentIndex) {
+                item.classList.add("active");
+            }
+        });
+    }
+
+    document.querySelector(".next").addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % items.length;
+        updateCarousel();
+    });
+
+    document.querySelector(".prev").addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + items.length) % items.length;
+        updateCarousel();
+    });
+
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % items.length;
+        updateCarousel();
+    }, 3000);
+
+    items.forEach(item => {
+        item.addEventListener("click", () => {
+            const imageUrl = item.getAttribute("src");
+            const text = item.getAttribute("data-text");
+
+            selectedImage.src = imageUrl;
+            selectedText.textContent = text;
+
+            carouselContainer.style.opacity = "0";
+            setTimeout(() => {
+                carouselContainer.classList.add("hidden");
+                prevButton.classList.add("hidden");
+                nextButton.classList.add("hidden");
+                selectedImageContainer.classList.remove("hidden");
+            }, 500);
+        });
+    });
+
+    exitButton.addEventListener("click", () => {
+        selectedImageContainer.classList.add("hidden");
+        carouselContainer.classList.remove("hidden");
+        prevButton.classList.remove("hidden");
+        nextButton.classList.remove("hidden");
+        setTimeout(() => {
+            carouselContainer.style.opacity = "1";
+        }, 100);
+    });
+});
