@@ -1272,6 +1272,7 @@ body {
         top: 44%;
         left: 51%;
         transform: translate(-50%, -50%);
+        
     }
 
     .carousel-item {
@@ -1287,7 +1288,9 @@ body {
     .selected-image-container {
         width: 220px;
         padding: 15px;
-        top: 44%;
+        top: 49%;
+        
+        
     }
 
     .selected-image {
@@ -1305,6 +1308,8 @@ body {
     .neon-button {
         padding: 4px 8px;
     }
+
+    
 }
 
 
@@ -1411,9 +1416,10 @@ body {
 
 @media (max-width: 500px) {
     .footer {
-        margin-bottom: 2rem;
+        margin-bottom: 0rem;
         padding: 50px 0px; 
-        min-height: 120px;
+        margin-top: auto;
+        min-height: 130px;
     }
     .footer-nav {
         margin-right: 0.8rem;
@@ -1423,9 +1429,10 @@ body {
 @media (max-width: 390px) {
     .footer {
         padding: 10px 0px;
-        margin-top: 2rem;
         margin-top: auto;
-        margin-bottom: 0rem !important; 
+        margin-bottom: -2rem; 
+        min-height: 140px;
+        
     }
 
     .footer-nav {
